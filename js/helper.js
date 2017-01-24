@@ -165,7 +165,8 @@ function initializeMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      animation: google.maps.Animation.DROP,
     });
 
     // infoWindows are the little helper windows that open when you click
@@ -174,10 +175,17 @@ function initializeMap() {
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
+    var infoWindowOpened = false;
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      if (infoWindowOpened === false) {
+        infoWindow.open(map, marker);
+        infoWindowOpened = true;
+      } else {
+        infoWindow.close(map, marker);
+        infoWindowOpened = false;
+      }
     });
 
     // this is where the pin actually gets added to the map.
