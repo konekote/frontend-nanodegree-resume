@@ -21,9 +21,8 @@ var bio = {
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
 
         $("#header").append(formattedPic, formattedWelcomeMsg);
-        $("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+        $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
         $("#header").prepend(formattedHeaderName, formattedHeaderRole);
-        $("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
         if (this.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
@@ -43,20 +42,22 @@ var education = {
             "location": "Bucharest, Romania",
             "degree": "MA",
             "majors": ["Japanese culture", "Japanese language"],
-            "dates": "2012-2015"
+            "dates": "2012-2015",
+            "url": "http://www.unibuc.ro/e/",
         },
         {
             "name": "University of Bucharest",
             "location": "Bucharest, Romania",
             "degree": "BA",
             "majors": ["Japanese culture", "Japanese literature", "Japanese language"],
-            "dates": "2009-2012"
+            "dates": "2009-2012",
+            "url": "http://www.unibuc.ro/e/",
         },
     ],
     "onlineCourses": [{
         "title": "JavaScript Syntax",
         "school": "Udacity",
-        "dates": 2017,
+        "dates": "2017",
         "url": "https://www.udacity.com/nanodegree"
     }, ],
     "display": function() {
@@ -108,7 +109,7 @@ var work = {
             "employer": "Conectys",
             "title": "Customer Support Agent",
             "location": "Bucharest",
-            "dates": 2015,
+            "dates": "2015",
             "description": "I helped as many customers as I could"
         },
     ],
@@ -137,13 +138,13 @@ function appendImage(image) {
 var projects = {
     "projects": [{
             "title": "Improving Customer Satisfaction",
-            "dates": 2015,
+            "dates": "2015",
             "description": "adding feedback form, revising templates, improving SLAs",
             "images": ["http://placekitten.com/g/200/200", "http://placekitten.com/g/200/200"],
         },
         {
             "title": "Improving Refund Rates",
-            "dates": 2016,
+            "dates": "2016",
             "description": "devising test templates, having refund scenarios",
             "images": ["http://placekitten.com/g/200/200", "http://placekitten.com/g/200/200"],
         },
